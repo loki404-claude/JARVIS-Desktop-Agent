@@ -1,0 +1,18 @@
+# Private cheezein - GitHub par kabhi nahi jaani chahiye
+.env
+.env.*
+!.env.example
+data/
+mic_test.wav
+*.wav
+
+# Python
+.venv/
+venv/
+__pycache__/
+*.pyc
+
+# Zip aur system files
+*.zip
+.DS_Store
+Thumbs.db
