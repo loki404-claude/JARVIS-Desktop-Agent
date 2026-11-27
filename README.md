@@ -69,16 +69,38 @@ Chat mein dikhta hai ki result kahan se aaya.
 4. Sirf Hindi-English mix ke liye `STT_LANGUAGE=hi`; zyada English bolte ho to `en`.
 
 ## Privacy
-- Search ka sawal Tavily ko, ya `ddgs` ke zariye public search engines ko jaata hai.
-- Mic ON hone par pakdi gayi aawaz text banane ke liye Groq (ya Gemini) ko jaati hai. Wake word mode mein bhi,
-  kyunki wake word text banne ke baad check hota hai. Zarurat na ho to mic OFF rakho.
-- Voice reply ka text Microsoft ki online voice service (edge-tts) ko jaata hai.
-- Notes aur yaadein `data/memory.json` mein tumhare PC par rehti hain, par yaadein AI ko context mein bheji jaati hain.
+## Aapka data kahan jaata hai?
 
-## Problem aaye to
-- **Model nahi mila / 404:** `.env` mein model naam check karo. Qwen vision Groq ka preview model hai, kabhi badal sakta hai.
-- **429:** API limit khatam, thodi der ruko ya AI MODEL badlo.
-- **Mic nahi chal raha:** Windows Settings > Privacy > Microphone > desktop apps ko allow karo; default mic check karo.
-- **Mic shor pakad raha / sun nahi raha:** `MIC_SENSITIVITY` badlo.
-- **Aawaz nahi:** internet aur speaker check karo.
-- **CPU zyada:** ECO mode ON karo.
+Ise use karne se pehle ye jaan lo:
+
+- Mic ON hai to jo aawaz pakdi jaati hai, wo text banne ke liye Groq ya Gemini ke paas jaati hai.
+  "Jarvis" bolne wala mode ON ho tab bhi, kyunki naam text banne ke baad hi pehchana jaata hai.
+  Kaam na ho to mic band rakho.
+- Jo aap likhte ya bolte ho, wo jawab ke liye Groq ya Gemini ko jaata hai. Screen ya clipboard wala
+  kaam allow karoge to wo bhi jaayega.
+- Web search karoge to sawal Tavily ke paas jaata hai, ya `ddgs` ke through doosre search engines par.
+- Jawab bolkar sunane ke liye uska text Microsoft ki online voice service (edge-tts) ko jaata hai.
+- Notes aur yaad rakhi hui baatein aapke PC par `data/memory.json` mein save hoti hain.
+  Yaad rakhi hui baatein jawab dete waqt AI ko bhi bheji jaati hain.
+
+## Kuch gadbad ho to
+
+**Model not found ya 404 aa raha hai?**
+`.env` mein model ka naam check karo. Screen dekhne ke liye jo Qwen model backup mein hai, wo abhi
+Groq par preview mein hai, to aage badal sakta hai.
+
+**429 aa raha hai?**
+Aam taur par iska matlab API limit poori ho gayi. Thoda ruko ya app mein AI MODEL badal kar dekho.
+
+**Mic chal hi nahi raha?**
+Windows ki Privacy settings mein Microphone kholo aur desktop apps ko permission do.
+Ye bhi dekho ki sahi mic select hai.
+
+**Mic theek se sun nahi raha ya shor pakad raha hai?**
+`.env` mein `MIC_SENSITIVITY` badlo. Aawaz nahi pakad raha to `1.5`, shor pakad raha hai to `0.7` try karo.
+
+**Jarvis ki aawaz nahi aa rahi?**
+Check karo ki VOICE ON hai, speaker chal raha hai aur internet connected hai.
+
+**CPU zyada use ho raha hai?**
+ECO mode ON kar do.
